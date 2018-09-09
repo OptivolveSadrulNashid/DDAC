@@ -25,6 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/1c928e75-fd08-4fd7-a14c-b25d157bc63e/resourcegroups/ddac2806/providers/microsoft.insights/components/DDACa</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/1c928e75-fd08-4fd7-a14c-b25d157bc63e/resourcegroups/ddac2806/providers/microsoft.insights/components/DDACa</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -144,6 +146,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+    <None Include="Properties\PublishProfiles\DDACa - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -179,6 +183,7 @@
     <Content Include="Shipping.aspx" />
     <Content Include="Site.Master" />
     <Content Include="Status.aspx" />
+    <Content Include="TestAppInsightClient.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -275,6 +280,13 @@
     <Compile Include="Status.aspx.designer.cs">
       <DependentUpon>Status.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TestAppInsightClient.aspx.cs">
+      <DependentUpon>TestAppInsightClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestAppInsightClient.aspx.designer.cs">
+      <DependentUpon>TestAppInsightClient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -296,6 +308,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
